@@ -1,0 +1,50 @@
+package controller;
+
+import dao.CategoryDao;
+import dao.DbConnection;
+import dao.ProductDao;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import model.Category;
+
+public class CategoryController extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        //Se obtinene parametros
+        String nombre = request.getParameter("category");
+        //String nombre = "Ropa";
+
+        //Se crea el objeto
+        Category categoria = new Category(2);
+        categoria.setName(nombre);
+
+        // Procesamos los datos. Guardar en BD
+        DbConnection conn = new DbConnection();
+        CategoryDao categoriaDao = new CategoryDao(conn);
+        boolean status = categoriaDao.insert(categoria);
+
+        // Preparamos un mensaje para el usuario
+        String msg = "";
+        if (status) {
+            msg = "La categoria fue guardada correctamente.";
+        } else {
+            msg = "Ocurrio un error. La categoria no fue guardada.";
+        }
+        conn.disconnect();
+        RequestDispatcher rd;
+        // Compartimos la variable msg, para poder accederla desde la vista con Expression Language
+        request.setAttribute("message", msg);
+        // Enviarmos respuesta. Renderizamos la vista mensaje.jsp
+        rd = request.getRequestDispatcher("/mensaje_admin.jsp");
+        rd.forward(request, response);
+    }
+
+}

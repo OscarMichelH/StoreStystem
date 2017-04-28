@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="contactanos" action="comentarios" method="post">
+            <fieldset>
+                <legend>Contáctanos</legend>
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" name="nombre" id="nombre" autofocus required><br>
+                <label for="email">Email:</label><br>
+                <input type="text" name="email" id="email" required ><br>
+                <label for="grado">Ultimo grado de estudio:</label><br>
+                <select name="grado" id="grado">
+                    <option value="secundaria">Secundaria</option>
+                    <option value="preparatoria">Preparatoria</option>
+                    <option value="licenciatura">Licenciatura</option>
+                    <option value="maestria">Maestria</option>
+                    <option value="doctorado">Doctorado</option>
+                </select><br>
+                <label for="comentarios">Comentarios:</label><br>
+                <textarea required name="comentarios" id="comentarios" cols="39" rows="5"></textarea><br><br>
+                <input type="submit" name="register" id="button" value="Register">
+                <input type="reset" name="reset">
+            </fieldset>
+        </form>
+
+    </body>
+</html>

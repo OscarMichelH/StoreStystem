@@ -1,0 +1,106 @@
+body {
+    font-family: "Open Sans",Arial,sans-serif;
+}
+
+.container {
+
+    min-height:100%;
+    position:relative;
+
+}
+
+.img {
+    width:100%;
+}
+
+body {
+    margin: 0px;
+}
+
+</style>
+
+<style type="text/css">
+#menu
+{
+    font-size: 18px;
+    background-color: #CCE5FF
+}
+
+
+#menu li
+{
+    padding-top: 8px;
+    display:inline-block;
+    *display: inline;
+    zoom: 1;
+    padding-bottom: 7px;
+    padding-right: 38px;
+    padding-left: 38px;
+    padding-bottom: 5px;
+}
+
+#menu a
+{
+    display:block;
+    color: #080669;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#menu
+{
+    text-align: center;
+}
+
+.botonguardar {
+    background-color: #1ACD00;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid rgba(12,151,0,1);
+    border-radius: 6px;
+}
+
+
+.hovertable {
+
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.hovertable th {
+    background-color:#99CCFF;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+table.hovertable tr {
+    background-color:#FFFFFF;
+}
+table.hovertable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+</style>
+
+
+.panel-body {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+}
+
+.panel > .panel-body + .table,
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
+    border-top: 1px solid #ddd;
+}
+
