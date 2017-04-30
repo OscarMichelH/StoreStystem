@@ -55,7 +55,7 @@
                     Es muy fácil de usar, solo haz clic en un artículo, ingresa para ver los detalles y envíala solicitud
                     de tu pedido. Nosotros revisaremos tu pedido y posteriormente te contactaremos.<br><br>
 
-                <p><a href="#" role="button">Ver más Ofertas</a></p>
+                <p><a class="btn" href="producto?action=lista" role="button">Ver más Artículos</a></p>
             </div>
 
             <h1>Artículos recientes</h1>

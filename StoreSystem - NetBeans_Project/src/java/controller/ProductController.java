@@ -3,6 +3,7 @@ package controller;
 import dao.DbConnection;
 import dao.ProductDao;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,8 @@ public class ProductController extends HttpServlet {
 
         if ("ver".equals(action)) {
             this.verDetalle(request, response);
+        } else if ("lista".equals(action)) {
+            this.verTodas(request, response);
         }
     }
 
@@ -82,6 +85,18 @@ public class ProductController extends HttpServlet {
 
         // Enviarmos respuesta. Renderizamos la vista detalle.jsp
         rd = request.getRequestDispatcher("/detail.jsp");
+        rd.forward(request, response);
+    }
+
+    protected void verTodas(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        DbConnection conn = new DbConnection();
+        ProductDao productoDao = new ProductDao(conn);
+        List<Product> lista = productoDao.getAll();
+        conn.disconnect();
+        // Compartimos la variable lista, para poder accederla desde la vista
+        request.setAttribute("productos", lista);
+        RequestDispatcher rd;
+        rd = request.getRequestDispatcher("/productos.jsp");
         rd.forward(request, response);
     }
 

@@ -92,4 +92,29 @@ public class ProductDao {
         }
     }
 
+    //Metodo que regresa una lista con todos los productos
+    public List<Product> getAll() {
+
+        try {
+            String sql = "select * from products order by id desc";
+            PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            List<Product> list = new LinkedList<>();
+            Product producto;
+            while (rs.next()) {
+                producto = new Product(rs.getInt("id"));
+                producto.setDate(rs.getDate("date"));
+                producto.setName(rs.getString("name"));
+                producto.setDescription(rs.getString("description"));
+                // Add vacante object to the list
+                list.add(producto);
+            }
+            return list;
+
+        } catch (SQLException e) {
+            System.out.println("Error ProductDao.getAll: " + e.getMessage());
+            return null;
+        }
+    }
+
 }
