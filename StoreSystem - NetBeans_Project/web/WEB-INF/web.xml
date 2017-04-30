@@ -20,13 +20,22 @@
         <servlet-name>ProductController</servlet-name>
         <servlet-class>controller.ProductController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchController</servlet-name>
+        <servlet-class>controller.SearchController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductController</servlet-name>
         <url-pattern>/producto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>SearchController</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CategoryController</servlet-name>
         <url-pattern>/categoria</url-pattern>
+        <url-pattern>/categorias</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SiteController</servlet-name>

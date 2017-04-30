@@ -32,6 +32,7 @@
                         <li><a href="#" >Inicio</a></li>
                         <li><a href="#">Administración</a></li>
                         <li><a href="#">Acerca</a></li>
+                        <li><a href="home_vendedores.jsp">Vendedores</a></li>
                     </ul>
                 </nav>
             </div>
