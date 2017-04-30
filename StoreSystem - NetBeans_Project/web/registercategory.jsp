@@ -19,6 +19,7 @@
         <div class="container">
 
             <%@include file="base/navbar_admin.jsp" %>
+            <%@include file="base/buscador.jsp" %>
 
 
             <br>

@@ -37,12 +37,7 @@
             </div>
 
             <!-- Formulario para la busqueda. El formulario es enviado por POST al BusquedaController -->
-            <form  class="text-left" method ="post" action="#" >
-                <div>
-                    <input type="text" name="query" required placeholder="Buscar oferta...">
-                </div>
-                <button type="submit" class="btn">Buscar</button>
-            </form>
+            <%@include file="base/buscador.jsp" %>
 
             <!-- Jumbotron -->
             <div class="jumbotron">

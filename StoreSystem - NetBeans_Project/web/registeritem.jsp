@@ -17,8 +17,8 @@
     <body>
         <div class="container">
             <%@include file="base/navbar_admin.jsp" %>
+            <%@include file="base/buscador.jsp" %>
 
-            <br>
             <div>
                 <div>
                     <h3>Crear Artículo</h3>

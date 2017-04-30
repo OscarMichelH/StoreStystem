@@ -24,18 +24,7 @@
                  Multiple lines will require custom code not provided by Bootstrap. -->
 
             <%@include file="base/navbar_admin.jsp" %>
-
-
-
-            <form method ="post" action="buscar" class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" name="query" required placeholder="Buscar oferta..." class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Buscar</button>
-            </form>
-            <br><br><br>
-
-
+            <%@include file="base/buscador.jsp" %>
 
             <div class="panel panel-primary">
                 <h3> Nombre:     ${producto.name} </h3>

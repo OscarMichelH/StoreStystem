@@ -20,7 +20,8 @@
         <div class="container">
 
             <%@include file = "base/navbar_admin.jsp" %>
-            <br>
+            <%@include file="base/buscador.jsp" %>
+
 
             <div>
                 <div>

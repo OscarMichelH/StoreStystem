@@ -25,13 +25,7 @@
 
             <%@include file="base/navbar_admin.jsp" %>
 
-            <form method ="post" action="buscar">
-                <div >
-                    <input type="text" name="query" required placeholder="Buscar articulos..." class="form-control">
-                </div>
-                <button type="submit">Buscar</button>
-            </form>
-            <br><br><br>
+            <%@include file="base/buscador.jsp" %>
 
             <div>
                 <div>

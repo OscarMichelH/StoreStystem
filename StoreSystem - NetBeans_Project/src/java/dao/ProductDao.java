@@ -117,4 +117,31 @@ public class ProductDao {
         }
     }
 
+    //Metodo para buscador
+    public List<Product> getByQuery(String query) {
+
+        try {
+            String sql = "select * from products where (description like ? or name like ?) order by id desc";
+            PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, "%" + query + "%");
+            preparedStatement.setString(2, "%" + query + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            List<Product> list = new LinkedList<>();
+            Product producto;
+            while (rs.next()) {
+                producto = new Product(rs.getInt("id"));
+                producto.setDate(rs.getDate("date"));
+                producto.setName(rs.getString("name"));
+                producto.setDescription(rs.getString("description"));
+                // Add vacante object to the list
+                list.add(producto);
+            }
+            return list;
+
+        } catch (SQLException e) {
+            System.out.println("Error ProductDao.getByQuery: " + e.getMessage());
+            return null;
+        }
+    }
+
 }
