@@ -12,6 +12,10 @@
         <servlet-name>SiteController</servlet-name>
         <servlet-class>controller.SiteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BillController</servlet-name>
+        <servlet-class>controller.BillController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
         <url-pattern>/user</url-pattern>
@@ -40,6 +44,10 @@
     <servlet-mapping>
         <servlet-name>SiteController</servlet-name>
         <url-pattern>/homepage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillController</servlet-name>
+        <url-pattern>/bill</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

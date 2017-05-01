@@ -82,6 +82,8 @@ public class ProductDao {
                 producto.setId(rs.getInt("id"));
                 producto.setDate(rs.getDate("date"));
                 producto.setName(rs.getString("name"));
+                producto.setPrice(rs.getFloat("price"));
+                producto.setStock(rs.getInt("stock"));
                 producto.setDescription(rs.getString("description"));
             }
             return producto;
@@ -91,15 +93,16 @@ public class ProductDao {
             return null;
         }
     }
-    
+
     //Metodo para buscador
     public List<Product> getByQuery(String query) {
 
         try {
-            String sql = "select * from products where (description like ? or name like ?) order by id desc";
+            String sql = "select * from products where (description like ? or name like ? or category like ?) order by id desc";
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
             preparedStatement.setString(1, "%" + query + "%");
             preparedStatement.setString(2, "%" + query + "%");
+            preparedStatement.setString(3, "%" + query + "%");
             ResultSet rs = preparedStatement.executeQuery();
             List<Product> list = new LinkedList<>();
             Product producto;
@@ -108,6 +111,8 @@ public class ProductDao {
                 producto.setDate(rs.getDate("date"));
                 producto.setName(rs.getString("name"));
                 producto.setDescription(rs.getString("description"));
+                producto.setStock(rs.getInt("stock"));
+                producto.setPrice(rs.getFloat("price"));
                 producto.setCategory(rs.getString("category"));
 
                 // Add vacante object to the list
@@ -120,7 +125,7 @@ public class ProductDao {
             return null;
         }
     }
-    
+
     //Metodo para buscador
     public List<Product> getByCategory(String query) {
 
@@ -153,7 +158,7 @@ public class ProductDao {
     public List<Product> getAll() {
 
         try {
-            String sql = "select * from products order by id desc";
+            String sql = "select * from products order by id asc";
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             List<Product> list = new LinkedList<>();
@@ -162,6 +167,9 @@ public class ProductDao {
                 producto = new Product(rs.getInt("id"));
                 producto.setDate(rs.getDate("date"));
                 producto.setName(rs.getString("name"));
+                producto.setStock(rs.getInt("stock"));
+                producto.setCategory(rs.getString("category"));
+                producto.setPrice(rs.getFloat("price"));
                 producto.setDescription(rs.getString("description"));
                 // Add vacante object to the list
                 list.add(producto);
@@ -170,33 +178,6 @@ public class ProductDao {
 
         } catch (SQLException e) {
             System.out.println("Error ProductDao.getAll: " + e.getMessage());
-            return null;
-        }
-    }
-
-    //Metodo para buscador
-    public List<Product> getByQuery(String query) {
-
-        try {
-            String sql = "select * from products where (description like ? or name like ?) order by id desc";
-            PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
-            preparedStatement.setString(1, "%" + query + "%");
-            preparedStatement.setString(2, "%" + query + "%");
-            ResultSet rs = preparedStatement.executeQuery();
-            List<Product> list = new LinkedList<>();
-            Product producto;
-            while (rs.next()) {
-                producto = new Product(rs.getInt("id"));
-                producto.setDate(rs.getDate("date"));
-                producto.setName(rs.getString("name"));
-                producto.setDescription(rs.getString("description"));
-                // Add vacante object to the list
-                list.add(producto);
-            }
-            return list;
-
-        } catch (SQLException e) {
-            System.out.println("Error ProductDao.getByQuery: " + e.getMessage());
             return null;
         }
     }

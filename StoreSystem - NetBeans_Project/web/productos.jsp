@@ -17,7 +17,15 @@
         <link href="css/signin.css" rel="stylesheet">
         <link href="css/nav.css" rel="stylesheet">
 
+
+        <style>
+            table, th, td {
+                border: 1px solid #efeeee;
+                text-align: center;
+            }
+        </style>
     </head>
+
 
     <body>
 
@@ -35,27 +43,34 @@
                     <table>
                         <thead>
                             <tr>
-                                <th class="left">ID</th>
+                                <th>ID</th>
                                 <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Stock</th>
                                 <th>Publicado</th>
+                                <th>Descripcion</th>
+                                <th>Precio</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody align="right">
                             <c:forEach items="${productos}" var="producto" varStatus="status">
                                 <tr>
-                                    <td class="left">${producto.id}</td>
+                                    <td>${producto.id}</td>
                                     <td>${producto.name}</td>
+                                    <td>${producto.category}</td>
+                                    <td>${producto.stock}</td>
+
                                     <td>${producto.date}</td>
+                                    <td>${producto.description}</td>
+                                    <td>${producto.price}</td>
                                     <td> <a href="producto?action=ver&id=${producto.id}" role="button">Ver Detalles&raquo;</a>
-
-
-
                                     </td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
+
                 </div>
             </div>
 

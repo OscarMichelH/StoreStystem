@@ -32,12 +32,19 @@
                     <h3 class="panel-title">ID: ${producto.id}</h3>
                 </div>
                 <div class="panel-body">
-                    <h5><b>Vacante</b>: ${producto.name}</h5>
+                    <h5><b>Nombre</b>: ${producto.name}</h5>
+                    <h5><b>Costo</b>: ${producto.price}</h5>
+                    <h5><b>Cantidad Disponible</b>: ${producto.stock}</h5>
                     <h5><b>Publicado</b>: ${producto.date}</h5>
                     <b>Descripción:</b><br>
                     <p class="text-justify">${producto.description}</p>
 
-                    <p><a title="Agregrar a la factura." href="producto?action=enviarCV&id=${producto.id}" role="button">Agregar al carrito</a></p>
+                    <form action="bill" method="get">
+                        <input type="text" class="form-control" name="quantity" required id="quantity" value="" placeholder="Cantidad deseada"><br>
+                        <input type="hidden" name="id" value="${producto.id}">
+                        <input type="hidden" name="action" value="agregar">
+                        <button type="submit" class="botonguardar" >Agregar al carrito</button>
+                    </form>
                 </div>
 
             </div>
