@@ -23,9 +23,7 @@
             <!-- The justified navigation menu is meant for single line per list item.
                  Multiple lines will require custom code not provided by Bootstrap. -->
 
-            <%@include file="base/navbar_admin.jsp" %>
-            <%@include file="base/buscador.jsp" %>
-
+        <%@include file="base/rules_navbar.jsp" %>                    
             <div class="panel panel-primary">
                 <h3> Nombre:     ${producto.name} </h3>
                 <div class="panel-heading">
@@ -39,12 +37,17 @@
                     <b>Descripción:</b><br>
                     <p class="text-justify">${producto.description}</p>
 
+            
+            <c:if test="${role == 'VENDEDOR'}">
                     <form action="bill" method="get">
                         <input type="text" class="form-control" name="quantity" required id="quantity" value="" placeholder="Cantidad deseada"><br>
                         <input type="hidden" name="id" value="${producto.id}">
                         <input type="hidden" name="action" value="agregar">
                         <button type="submit" class="botonguardar" >Agregar al carrito</button>
                     </form>
+            </c:if>
+   
+                        
                 </div>
 
             </div>

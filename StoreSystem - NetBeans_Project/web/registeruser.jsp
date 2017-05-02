@@ -18,9 +18,7 @@
 
         <div class="container">
 
-            <%@include file="base/navbar_admin.jsp" %>
-            <%@include file="base/buscador.jsp" %>
-
+        <%@include file="base/rules_navbar.jsp" %> 
             <br>
             <div>
                 <div>

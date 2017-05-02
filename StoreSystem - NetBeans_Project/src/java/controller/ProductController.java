@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Product;
 
 public class ProductController extends HttpServlet {
@@ -94,6 +95,9 @@ public class ProductController extends HttpServlet {
         List<Product> lista = productoDao.getAll();
         conn.disconnect();
         // Compartimos la variable lista, para poder accederla desde la vista
+        HttpSession session = request.getSession();
+        request.setAttribute("usuario", session.getAttribute("usuario"));
+        
         request.setAttribute("productos", lista);
         RequestDispatcher rd;
         rd = request.getRequestDispatcher("/productos.jsp");

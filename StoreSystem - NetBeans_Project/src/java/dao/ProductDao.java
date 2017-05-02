@@ -44,7 +44,7 @@ public class ProductDao {
     public List<Product> getUltimas() {
 
         try {
-            String sql = "select * from products order by id desc limit 3";
+            String sql = "select * from products order by id asc limit 3";
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             List<Product> list = new LinkedList<>();

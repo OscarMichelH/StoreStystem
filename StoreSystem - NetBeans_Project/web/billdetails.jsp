@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +39,8 @@
             <!-- The justified navigation menu is meant for single line per list item.
                  Multiple lines will require custom code not provided by Bootstrap. -->
 
-            <%@include file="base/navbar_admin.jsp" %>
-            <%@include file="base/buscador.jsp" %>
+        <%@include file="base/rules_navbar.jsp" %> 
+            
             <h2>Artículos en la factura</h2>
 
             <div>

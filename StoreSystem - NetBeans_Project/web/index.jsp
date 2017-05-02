@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,24 +22,10 @@
     <body>
 
         <div class="container">
+             
+        <%@include file="base/rules_navbar.jsp" %> 
 
-            <!-- The justified navigation menu is meant for single line per list item.
-                 Multiple lines will require custom code not provided by Bootstrap. -->
-            <div class="jumbotron">
-                <h3 class="text-center">Store System</h3>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="#" >Inicio</a></li>
-                        <li><a href="#">Administración</a></li>
-                        <li><a href="#">Acerca</a></li>
-                        <li><a href="home_vendedores.jsp">Vendedores</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!-- Formulario para la busqueda. El formulario es enviado por POST al BusquedaController -->
-            <%@include file="base/buscador.jsp" %>
-
+                        
             <!-- Jumbotron -->
             <div class="jumbotron">
                 <h2>¡ENCUENTRA CUALQUIER ARTÍCULO!</h2>

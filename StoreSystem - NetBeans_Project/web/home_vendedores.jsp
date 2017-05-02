@@ -21,7 +21,6 @@
     </head>
     <body>
         <div class="container">
-            <%@include file="base/navbar_vendedor.jsp" %>
             <div id="searchField" style="display:none;">
                 
                 <p>Búsqueda por:</p>
@@ -70,4 +69,4 @@
             </div>
         </div>
     </body>
-</html>
+    </html>

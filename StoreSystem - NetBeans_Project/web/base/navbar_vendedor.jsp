@@ -1,14 +1,15 @@
-<%--
-    Document   : navbar_vendedor
-    Created on : Apr 29, 2017, 5:31:17 PM
-    Author     : bmbrina
---%>
-
-<h3 class="text-center">Store System</h3>
+    <div class="row">
+        <div class="col-8">
+            <a href="homepage"><img src="images/logo.png"></a>
+        </div>
+        <div class="col-4">
+    <p align="right"> ${usuario.role} </p>
+        </div>
+    </div>
 <nav class="nav">
     <ul>
         <li><a onClick="toggleElement('searchField')">Buscar Artículo</a></li>
         <li><a href="bill?action=ver"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-        <li><a href="#">Salir</a></li>
+        <li><a href="user?action=logout">Salir</a></li>
     </ul>
 </nav>
