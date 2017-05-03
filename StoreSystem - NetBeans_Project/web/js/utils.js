@@ -61,8 +61,8 @@ function displaySearchResults(results = []) {
     
     
     results.forEach(result => {
-        $('#productsBody').append('<tr><td>' + result.id + '</td><td>' + result.name + '</td><td>' + result.price + '</td><td>' + result.stock + '</td><td>' + result.category + '</td><td>' + result.description + '</td></tr>');
-    })
+        $('#productsBody').append('<tr><td>' + result.id + '</td><td>' + result.name + '</td><td>' + result.price + '</td><td>' + result.stock + '</td><td>' + result.category + '</td><td>' + result.description + '</td><td><a href="producto?action=ver&id=' + result.id + '" role="button">Ver Detalles</a></td></tr>');
+    });
 }
 
 function getCategories() {

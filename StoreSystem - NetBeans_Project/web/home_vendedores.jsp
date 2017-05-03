@@ -56,7 +56,7 @@
                     <th>Stock</th>
                     <th>Categoría</th>
                     <th>Descripción</th>
-                    <th>Imagen</th>  
+                    <th>Detalles</th>  
                     </thead>
                     
                     <tbody id="productsBody">
