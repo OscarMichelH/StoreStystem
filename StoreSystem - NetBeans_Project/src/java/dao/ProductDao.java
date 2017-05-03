@@ -191,5 +191,21 @@ public class ProductDao {
             return null;
         }
     }
+    
+    public void setStockById(int id, int cantidad) {
+        
+        try {
+            String sql = "UPDATE products SET stock = ? WHERE ID = ?";
+            PreparedStatement preparedStatement = conn.getConnection()
+                    .prepareStatement(sql);
+            
+            preparedStatement.setInt(1, cantidad);
+            preparedStatement.setInt(2, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error ProductDao.setStockById: " + e.getMessage());
+        }
+    }
 
 }

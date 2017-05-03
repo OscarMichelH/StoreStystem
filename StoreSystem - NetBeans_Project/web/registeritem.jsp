@@ -11,6 +11,9 @@
         <link href="css/grid.css" rel="stylesheet">
         <link href="css/signin.css" rel="stylesheet">
         <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+        <script src="https://use.fontawesome.com/7daea4c729.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/utils.js"></script>
 
     </head>
 
@@ -36,12 +39,21 @@
                         <label for="price">Precio</label>
                         <input type="text" class="form-control" name="price" required id="price" value="" placeholder="Escriba el precio"><br>
 
-                        <label for="category">Categoria</label><br>
-                        <select name="category" required id="category">
-                            <option>Electronicos</option><br>
-                            <option>Casa</option><br>
-                        </select><br><br>
+                      
 
+                        <a name="param" value="categoria" onClick="toggleSearchType()"> Categoría</a><br>
+                
+                        
+                
+                    <div id="searchBar">
+                        <input type="hidden" name="query" required placeholder="Buscar...">
+                     </div>  
+                    <select id="categories" name="query" style="display:none;">
+                        <option value="">Selecciona una categoría</option>
+                    </select>
+                     
+       
+                        <br>
 
 
                         <label for="description">Descripción</label><br>

@@ -36,7 +36,7 @@ public class ProductController extends HttpServlet {
         int cantidad = Integer.parseInt(scantidad);
         String sprecio = request.getParameter("price");
         float precio = Float.parseFloat(sprecio);
-        String category = request.getParameter("category");
+        String category = request.getParameter("query");
         //String category = "Casa";
         String descripcion = request.getParameter("description");
         String image_ling = request.getParameter("image_link");

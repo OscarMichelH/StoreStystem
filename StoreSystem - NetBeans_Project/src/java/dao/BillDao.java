@@ -128,4 +128,68 @@ public class BillDao {
         }
     }
 
+        public Bill getUltimo() {
+        try {
+            String sql = "select * from products order by id desc limit 1";
+            PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
+ 
+            ResultSet rs = preparedStatement.executeQuery();
+            Bill factura = new Bill(rs.getInt("id"));
+            System.out.println("Query by Id succesfull");
+            while (rs.next()) {
+                // Create an object for the movie
+                factura.setId(rs.getInt("id"));
+                factura.setDate(rs.getDate("date"));
+
+                //Formato en horas
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(rs.getTime("time"));
+
+                factura.setTime(cal);
+
+                //Procesamiento del string de IDs de la base de datos para recuperar
+                //los productos en una lista de objetos del mismo
+                String ids = rs.getString("products");
+
+                String[] idProductos = ids.split("\\s+");
+
+                Product producto;
+                DbConnection con = new DbConnection();
+                ProductDao productoDao = new ProductDao(con);
+                List<Product> listaProductos = new ArrayList<Product>();
+
+                for (int i = 0; i < idProductos.length; i++) {
+
+                    producto = new Product(Integer.parseInt(idProductos[i]));
+
+                    producto = productoDao.getById(producto.getId());
+                    //System.out.println(producto);
+
+                    listaProductos.add(producto);
+                }
+
+                factura.setProducts(listaProductos);
+
+                //
+                String cantidades = rs.getString("quantities");
+
+                String[] quantities = cantidades.split("\\s+");
+
+                List<Integer> listaCantidades = new ArrayList<Integer>();
+                for (int i = 0; i < quantities.length; i++) {
+                    listaCantidades.add(Integer.parseInt(quantities[i]));
+
+                }
+
+                factura.setQuantities(listaCantidades);
+
+            }
+            return factura;
+
+        } catch (SQLException e) {
+            System.out.println("Error ProductDao.getById: " + e.getMessage());
+            return null;
+        }
+    }
+    
 }

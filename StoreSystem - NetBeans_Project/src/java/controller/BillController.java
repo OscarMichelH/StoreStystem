@@ -51,21 +51,34 @@ public class BillController extends HttpServlet {
         //Conexion a la bd
         DbConnection conn = new DbConnection();
         BillDao billDao = new BillDao(conn);
+        ProductDao productDao = new ProductDao(conn);
 
         List<Product> productos = billDao.getById(0).getProducts();
         List<Integer> cantidades = billDao.getById(0).getQuantities();
+        
+        for(int i=0; i<productos.size(); i++){
+           productDao.setStockById(productos.get(i).getId(), (productos.get(i).getStock()- cantidades.get(i)));
+           
+        }
 
         //Se vacia el carrito tras la compra
         this.vaciarCarrito(request, response, false);
 
-        Bill factura = new Bill(1);
+        Bill factura = new Bill(2);
         factura.setProducts(productos);
         factura.setQuantities(cantidades);
 
+        // Compartimos la variable msg, para poder accederla desde la vista con Expression Language
+        LinkedHashMap<Integer, Product> shuffle = new LinkedHashMap<Integer, Product>();
+        List<Float> subtotales = new ArrayList<Float>();
+        
         //Obtenemos el total del costo de los productos
         float total = 0;
         for (int i = 0; i < productos.size(); i++) {
             total += ((productos.get(i).getPrice()) * cantidades.get(i));
+            subtotales.add((productos.get(i).getPrice()) * cantidades.get(i));
+             shuffle.put(cantidades.get(i), productos.get(i));
+             
         }
 
         factura.setTotal(total);
@@ -74,6 +87,9 @@ public class BillController extends HttpServlet {
         boolean status = billDao.insert(factura);
         //Una vez almacenada la lista se vacia para una nueva factura
         productos.clear();
+        
+        
+        
         // Preparamos un mensaje para el usuario
         String msg = "";
         if (status) {
@@ -82,11 +98,16 @@ public class BillController extends HttpServlet {
             msg = "Ocurrio un error. La factura no fue guardada.";
         }
         conn.disconnect();
+        
+        request.setAttribute("factura", factura);
+        request.setAttribute("subtotal", subtotales);
+        request.setAttribute("facturas", shuffle);
+        request.setAttribute("total", total);
+
         RequestDispatcher rd;
-        // Compartimos la variable msg, para poder accederla desde la vista con Expression Language
-        request.setAttribute("message", msg);
-        // Enviarmos respuesta. Renderizamos la vista mensaje.jsp
-        rd = request.getRequestDispatcher("/mensaje_admin.jsp");
+
+        // Enviarmos respuesta. Renderizamos la vista detalle.jsp
+        rd = request.getRequestDispatcher("/recibo.jsp");
         rd.forward(request, response);
 
     }
@@ -101,9 +122,13 @@ public class BillController extends HttpServlet {
         ProductDao productoDao = new ProductDao(conn);
 
         Product producto = productoDao.getById(idProducto);
-        System.out.println(producto);
-
+        
+        String msg = "";
+        //Se valida que hay suficiente en el stock
+        if(iCantidad <= producto.getStock()){
         productos.add(producto);
+        
+  
 
         //Actualizar la factura temporal
         BillDao billDao = new BillDao(conn);
@@ -126,11 +151,14 @@ public class BillController extends HttpServlet {
         boolean status = true;
 
         // Preparamos un mensaje para el usuario
-        String msg = "";
+
         if (status) {
             msg = "El producto fue guardado correctamente.";
         } else {
             msg = "Ocurrio un error. El producto no fue guardado.";
+        }
+        }else{
+         msg = "No hay suficientes articulos en el stock";
         }
         conn.disconnect();
         RequestDispatcher rd;
@@ -154,7 +182,7 @@ public class BillController extends HttpServlet {
 
             shuffle.put(cantidades.get(i), productos.get(i));
         }
-
+        
         request.setAttribute("facturas", shuffle);
         request.setAttribute("total", total);
 
