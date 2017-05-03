@@ -21,7 +21,7 @@ public class ProductDao {
     public boolean insert(Product articulo) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-        String sql = "INSERT INTO products VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO products VALUES (?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = conn.getConnection().prepareStatement(sql);
 
@@ -32,6 +32,7 @@ public class ProductDao {
             ps.setFloat(5, articulo.getPrice());
             ps.setString(6, articulo.getCategory());
             ps.setString(7, articulo.getDescription());
+            ps.setString(8, articulo.getImage_link());
             ps.executeUpdate();
             return true;
 
@@ -45,10 +46,12 @@ public class ProductDao {
 
         try {
             String sql = "select * from products order by id asc limit 3";
+             System.out.println("Hola Mundo");
             PreparedStatement preparedStatement = conn.getConnection().prepareStatement(sql);
             ResultSet rs = preparedStatement.executeQuery();
             List<Product> list = new LinkedList<>();
             Product producto;
+                           
             while (rs.next()) {
                 producto = new Product(rs.getInt("id"));
                 producto.setName(rs.getString("name"));
@@ -57,7 +60,10 @@ public class ProductDao {
                 producto.setStock(rs.getInt("stock"));
                 producto.setCategory(rs.getString("category"));
                 producto.setDescription(rs.getString("description"));
+                producto.setImage_link(rs.getString("image_link"));
+                
 
+                
                 // Add vacante object to the list
                 list.add(producto);
             }
@@ -85,6 +91,7 @@ public class ProductDao {
                 producto.setPrice(rs.getFloat("price"));
                 producto.setStock(rs.getInt("stock"));
                 producto.setDescription(rs.getString("description"));
+                producto.setImage_link(rs.getString("image_link"));
             }
             return producto;
 
@@ -114,6 +121,7 @@ public class ProductDao {
                 producto.setStock(rs.getInt("stock"));
                 producto.setPrice(rs.getFloat("price"));
                 producto.setCategory(rs.getString("category"));
+                producto.setImage_link(rs.getString("image_link"));
 
                 // Add vacante object to the list
                 list.add(producto);
@@ -142,6 +150,7 @@ public class ProductDao {
                 producto.setName(rs.getString("name"));
                 producto.setDescription(rs.getString("description"));
                 producto.setCategory(rs.getString("category"));
+                producto.setImage_link(rs.getString("image_link"));
 
                 // Add vacante object to the list
                 list.add(producto);
@@ -171,6 +180,7 @@ public class ProductDao {
                 producto.setCategory(rs.getString("category"));
                 producto.setPrice(rs.getFloat("price"));
                 producto.setDescription(rs.getString("description"));
+                producto.setImage_link(rs.getString("image_link"));
                 // Add vacante object to the list
                 list.add(producto);
             }

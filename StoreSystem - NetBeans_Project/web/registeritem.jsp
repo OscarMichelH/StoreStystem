@@ -47,6 +47,10 @@
                         <label for="description">Descripción</label><br>
                         <textarea class="textarea" name="description" id="description" required rows="3" placeholder="Escribe una descripción del producto"></textarea><br>
 
+                        <label for="image_link">Imagen</label><br>
+                        <textarea class="textarea" name="image_link" id="image_link" required rows="3" placeholder="Escribe la url del producto"></textarea><br>
+
+                        
                         <button type="submit" class="botonguardar" >Guardar</button>
                     </form>
                 </div>

@@ -26,11 +26,13 @@
         <%@include file="base/rules_navbar.jsp" %>                    
             <div class="panel panel-primary">
                 <h3> Nombre:     ${producto.name} </h3>
+                <img src="${producto.image_link}" style='width: 200px'>
+                
                 <div class="panel-heading">
                     <h3 class="panel-title">ID: ${producto.id}</h3>
                 </div>
                 <div class="panel-body">
-                    <h5><b>Nombre</b>: ${producto.name}</h5>
+                    <h5>${producto.name}</h5>
                     <h5><b>Costo</b>: ${producto.price}</h5>
                     <h5><b>Cantidad Disponible</b>: ${producto.stock}</h5>
                     <h5><b>Publicado</b>: ${producto.date}</h5>

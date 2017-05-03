@@ -48,6 +48,7 @@
                                 <th>Publicado</th>
                                 <th>Descripcion</th>
                                 <th>Precio</th>
+                                <th>Imagen</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -62,6 +63,7 @@
                                     <td>${producto.date}</td>
                                     <td>${producto.description}</td>
                                     <td>${producto.price}</td>
+                                    <td><img src="${producto.image_link}" style='width: 50px'></td>
                                     <td> <a href="producto?action=ver&id=${producto.id}" role="button">Ver Detalles&raquo;</a>
                                     </td>
                                 </tr>

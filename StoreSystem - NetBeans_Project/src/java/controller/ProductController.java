@@ -39,7 +39,7 @@ public class ProductController extends HttpServlet {
         String category = request.getParameter("category");
         //String category = "Casa";
         String descripcion = request.getParameter("description");
-        String detalle = request.getParameter("detail");
+        String image_ling = request.getParameter("image_link");
 
         Product articulo = new Product(2);
         articulo.setName(nombre);
@@ -47,6 +47,7 @@ public class ProductController extends HttpServlet {
         articulo.setPrice(precio);
         articulo.setCategory(category);
         articulo.setDescription(descripcion);
+        articulo.setImage_link(image_ling);
 
         // Procesamos los datos. Guardar en BD
         DbConnection conn = new DbConnection();

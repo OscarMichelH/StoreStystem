@@ -15,6 +15,11 @@
                 <%@include file="navbar_gerenteInventario.jsp" %>
 
             </c:if>
+
+           <c:if test="${role == 'GERENTE VENTAS'}">
+                <%@include file="navbar_gerenteVentas.jsp" %>
+
+            </c:if>
             
             <c:if test="${role == null}">
                 <%@include file="navbar_base.jsp" %>

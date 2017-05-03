@@ -3,21 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/src/java/dao/Prueba.java</file>
-            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/productos.jsp</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/src/java/controller/ProductController.java</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/home_vendedores.jsp</file>
-            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/base/navbar_base.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/src/java/controller/UserController.java</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/comentarios.html</file>
-            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/base/rules_navbar.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/base/navbar_vendedor.jsp</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/src/java/controller/BillController.java</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/src/java/dao/BillDao.java</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/base/navbar_admin.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/detail.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/index.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/registeruser.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/billdetails.jsp</file>
-            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/login.jsp</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/js/utils.js</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/registercategory.jsp</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/login.jsp</file>
+            <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/base/navbar_gerenteVentas.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/mensaje_admin.jsp</file>
             <file>file:/D:/ITESM/6to%20Semestre/Aplicacion%20Web/ProyectoFinal/StoreStystem/StoreSystem%20-%20NetBeans_Project/web/registeritem.jsp</file>
         </group>

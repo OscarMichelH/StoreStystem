@@ -49,6 +49,7 @@
 
                         <h3>Producto [${producto.id}]</h3>
                         <p>${producto.name}</p>
+                        <img src="${producto.image_link}" style='width: 100px'>
                         <p>${producto.description}</p>
                         <p><a href="producto?action=ver&id=${producto.id}" role="button">Ver Detalles&raquo;</a></p>
                     </div>
